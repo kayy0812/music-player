@@ -1,0 +1,48 @@
+/* Rules by me */
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #eeeeee;
+    --gray-color: gray;
+    --pink-color: pink;
+    --transparent: transparent;
+
+    --progress-track-color: #ffffff;
+    --progress-thumb-color: #3c3c3c;
+    --switch-btn-color: #f1f1f1; 
+
+    --menu-item-color: #eeeeee;
+
+    --playlist-item-color: #ffffff1c;
+    --playlist-item-color-hover: #ffffff39;
+}
+
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Alkatra', cursive;
+}
+
+a {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Button */
+.btn {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

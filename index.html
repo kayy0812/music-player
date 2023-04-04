@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <audio id="audio"></audio>
+        <div class="background">
+            <img src="./assets/images/backgrounds/06.png" alt="01 Background" class="background__img">
+
+            <canvas class="background__particles"></canvas>
+            <canvas class="background__particles-2"></canvas>
+        </div>
+        <div class="player">
+            <div class="player__avatar">
+                <img src="./assets/images/avatars/02.jpg" alt="" class="player__avatar-img">
+            </div>
+            <div class="player__controls">
+                <h1 class="player__controls-title">Đâyy là tiêu đề bài hát</h1>
+                <span class="player__controls-author">Đây là tên sở hữu</span>
+
+                <div class="player__controls-time">
+                    <span class="player__controls-time-current">02:03</span>
+                    <span class="player__controls-time-length">05:03</span>
+                </div>
+
+                <div style="height: 20px; display: flex; align-items: center;">
+                    <div class="player__controls-progress">
+                        <div class="player__controls-progress-thumb"></div>
+                    </div>
+                </div>
+
+                <div class="player__controls-switch">
+                    <button class="btn player__controls-switch-loop">
+                        <i class="fa-solid fa-repeat"></i>
+                    </button>
+
+                    <button class="btn player__controls-switch-shuffle">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                </div>
+
+                <div class="player__controls-action">
+                    <button title="Prev" class="btn player__controls-action-prev">
+                        <i class="fa-solid fa-backward"></i>
+                    </button>
+
+                    <button title="Play / Pause" class="btn player__controls-action-play">
+                        <i class="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+
+                    <button title="Next" class="btn player__controls-action-next">
+                        <i class="fa-solid fa-forward"></i>
+                    </button>
+                </div>
+
+                <div class="player__controls-menu">
+                    <ul class="player__controls-menu-list">
+                        <li id="playlistBtn" class="player__controls-menu-item">
+                            <i class="fa-solid fa-list"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="player__controls-playlist">
+                    <div class="player__controls-playlist-overlay"></div>
+                    <span class="player__controls-playlist-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                    <ul class="player__controls-playlist-list">
+                        <li class="player__controls-playlist-item">
+                            <h2 class="player__controls-playlist-item-name">Day la tieu de bai hat</h2>
+                            <span class="player__controls-playlist-item-author">Day la author</span>
+                        </li>
+                        <li class="player__controls-playlist-item">
+                            <h2 class="player__controls-playlist-item-name">Day la tieu de bai hat</h2>
+                            <span class="player__controls-playlist-item-author">Day la author</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"
+        integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/playlist.js"></script>
+    <script src="./assets/js/media.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
