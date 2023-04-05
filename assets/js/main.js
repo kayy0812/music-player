@@ -14,7 +14,7 @@ playlistCloseBtn.addEventListener('click', (e) => {
 // Player onload
 window.onload = function () {
     const queue = new Queue(playlist)
-    queue.loadSong()
+    queue.loadSong(0)
 
     // Queue event
     queue.song.source.addEventListener('timeupdate', function (e) {
@@ -36,9 +36,9 @@ window.onload = function () {
     })
 
     loopBtn.addEventListener('click', function () {
-        if(queue.song.source.loop) {
+        if (queue.song.source.loop) {
             loopBtn.classList.remove('player__controls-switch-loop--active')
-            queue.song.source.loop = false 
+            queue.song.source.loop = false
         } else {
             loopBtn.classList.add('player__controls-switch-loop--active')
             queue.song.source.loop = true
@@ -46,12 +46,12 @@ window.onload = function () {
     })
 
     shuffleBtn.addEventListener('click', function () {
-        if(queue.shuffle) {
+        if (queue.shuffle) {
             shuffleBtn.classList.remove('player__controls-switch-shuffle--active')
-            queue.setShuffle(false) 
+            queue.setShuffle(false)
         } else {
             shuffleBtn.classList.add('player__controls-switch-shuffle--active')
-            queue.setShuffle(true) 
+            queue.setShuffle(true)
         }
     })
 
@@ -66,6 +66,7 @@ window.onload = function () {
         }
     })
 
+    // Particles
     Particles.init({
         selector: '.background__particles',
         color: '#eeeeee',

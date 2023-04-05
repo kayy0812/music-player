@@ -6,7 +6,7 @@ const loopBtn = document.querySelector('.player__controls-switch-loop')
 const shuffleBtn = document.querySelector('.player__controls-switch-shuffle')
 
 class Song {
-    constructor({title, author, source, avatar, background}) {
+    constructor({ title, author, source, avatar, background }) {
         audio.src = `./assets/audio/${source}`
         this.title = title
         this.author = author
@@ -14,7 +14,7 @@ class Song {
         this.avatar = avatar
         this.background = background
     }
-    
+
     play() {
         playBtn.classList.add('player__controls-action-play--active')
         if (!this.source.paused) {
@@ -48,26 +48,50 @@ class UI {
     setBackground(background) {
         document.querySelector('.background__img').setAttribute('src', `./assets/images/backgrounds/${background}`)
     }
-    
+
     updateTime(e) {
-        const {currentTime, duration} = e.srcElement
+        const { currentTime, duration } = e.srcElement
         const progress = document.querySelector('.player__controls-progress-thumb')
         document.querySelector('.player__controls-time-current').textContent = formatTime(currentTime)
         document.querySelector('.player__controls-time-length').textContent = formatTime(duration)
 
-        progress.style.width = `${timeToPercent(currentTime, duration)}%` 
+        progress.style.width = `${timeToPercent(currentTime, duration)}%`
+    }
+
+    setPlaylist(playlist) {
+        const boxPlaylist = document.querySelector('.player__controls-playlist-list')
+        boxPlaylist.innerHTML = ``
+        const queue = new Queue(playlist)
+
+        for (var song of playlist) {
+            var item = document.createElement('li')
+            item.classList.add('player__controls-playlist-item')
+            item.innerHTML = `
+            <h2 class="player__controls-playlist-item-name">${song.title}</h2>
+            <span class="player__controls-playlist-item-author">${song.author}</span>
+            `
+            boxPlaylist.appendChild(item)
+        }
+
+        const playlistItem = document.querySelectorAll('.player__controls-playlist-item')
+        for (var i = 0; i < playlistItem.length; i++) (function(i) {
+            playlistItem[i].addEventListener('click', function (e) {
+                var id = i
+                queue.loadSong(id)
+            })
+        })(i)
     }
 }
 
 class Queue {
-    constructor (playlist) {
+    constructor(playlist) {
         this.songIndex = 0
         this.song = {}
         this.ui = new UI()
         this.playlist = playlist
         this.shuffle = false
     }
-    
+
     loadSong(index) {
         const song = new Song(this.shuffle ? playlist[Math.floor(Math.random() * playlist.length)] : playlist[index ? index : this.songIndex])
         const ui = new UI()
@@ -75,6 +99,7 @@ class Queue {
         ui.setAuthor(song.author)
         ui.setAvatar(song.avatar)
         ui.setBackground(song.background)
+        ui.setPlaylist(this.playlist)
         song.play()
 
         this.song = song
@@ -105,9 +130,9 @@ class Queue {
 }
 
 function formatTime(second) {
-    let hours = Math.floor(second / 3600);
-    let minutes = Math.floor((second - hours * 3600) / 60);
-    let seconds = Math.floor(second - hours * 3600 - minutes * 60);
+    let hours = !second ? '0' : Math.floor(second / 3600);
+    let minutes = !second ? '0' : Math.floor((second - hours * 3600) / 60);
+    let seconds = !second ? '0' : Math.floor(second - hours * 3600 - minutes * 60);
 
     hours = hours < 10 ? (hours > 0 ? '0' + hours : 0) : hours;
 

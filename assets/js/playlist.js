@@ -30,6 +30,22 @@ const playlist = (function () {
             source: '04.mp3',
             avatar: '04.jpg',
             background: '06.jpg'
+        },
+
+        {
+            title: 'GIÓ (Remix)',
+            author: 'TVT',
+            source: '05.mp3',
+            avatar: '03.jpg',
+            background: '08.jpg'
+        },
+
+        {
+            title: 'ƯNG QUÁ CHỪNG',
+            author: 'TVT x RION',
+            source: '06.mp3',
+            avatar: '05.jpg',
+            background: '09.jpg'
         }
     ]
 })();

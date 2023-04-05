@@ -50,6 +50,7 @@
     position: relative;
     padding: 24px;
     width: 400px;
+    height: max-content;
     border-radius: 6px;
     background-color: #03030373;
     z-index: 2;
@@ -71,7 +72,6 @@
 
 .player__controls-playlist,
 .player__controls-playlist-overlay {
-
     position: absolute;
     inset: 0 0 0 0;
     border-radius: 6px;
@@ -92,7 +92,7 @@
 .player__controls-playlist-close {
     position: absolute;
     top: 0;
-    right: 12px;
+    right: 24px;
     font-size: 2rem;
     cursor: pointer;
     z-index: 1;
@@ -109,6 +109,18 @@
 .player__controls-playlist-list {
     position: relative;
     padding: 6px 0;
+    overflow-y: auto;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background-color: #03030373;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 6px;
+    background-color: #c3c3c373;
 }
 
 .player__controls-playlist-item {
