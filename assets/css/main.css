@@ -75,9 +75,11 @@
     position: absolute;
     inset: 0 0 0 0;
     border-radius: 6px;
+    
 }
 
 .player__controls-playlist {
+    padding: 6px 0;
     visibility: hidden;
 }
 
@@ -108,7 +110,7 @@
 
 .player__controls-playlist-list {
     position: relative;
-    padding: 6px 0;
+    padding: 12px 0;
     overflow-y: auto;
     height: 100%;
 }
