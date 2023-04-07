@@ -46,6 +46,14 @@ const playlist = (function () {
             source: '06.mp3',
             avatar: '05.jpg',
             background: '09.jpg'
+        },
+
+        {
+            title: 'Estacy Love',
+            author: 'Exclusive Music',
+            source: '07.mp3',
+            avatar: '06.jpg',
+            background: '10.jpg'
         }
     ]
 })();

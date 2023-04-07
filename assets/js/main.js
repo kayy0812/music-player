@@ -14,7 +14,8 @@ playlistCloseBtn.addEventListener('click', (e) => {
 // Player onload
 window.onload = function () {
     const queue = new Queue(playlist)
-    queue.loadSong(0)
+    queue.callback = queue
+    queue.loadSong()
 
     // Queue event
     queue.song.source.addEventListener('timeupdate', function (e) {
@@ -65,6 +66,15 @@ window.onload = function () {
             queue.song.pause()
         }
     })
+
+    // Progress change
+    progress.addEventListener('click', function (e) {
+        var percent = (e.offsetX / progress.offsetWidth) * 100
+        var seekTime = queue.song.source.duration * (percent / 100)
+        queue.loadSong(seekTime)
+    })
+
+
 
     // Particles
     Particles.init({

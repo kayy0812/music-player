@@ -13,19 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <title>Music Player</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <audio id="audio"></audio>
         <div class="background">
             <img src="./assets/images/backgrounds/06.png" alt="01 Background" class="background__img">
-
+            
             <canvas class="background__particles"></canvas>
             <canvas class="background__particles-2"></canvas>
         </div>
         <div class="player">
+            <audio id="audio" autoplay></audio>
             <div class="player__avatar">
                 <img src="./assets/images/avatars/02.jpg" alt="" class="player__avatar-img">
             </div>
@@ -34,8 +35,8 @@
                 <span class="player__controls-author">Đây là tên sở hữu</span>
 
                 <div class="player__controls-time">
-                    <span class="player__controls-time-current">02:03</span>
-                    <span class="player__controls-time-length">05:03</span>
+                    <span class="player__controls-time-current">00:00</span>
+                    <span class="player__controls-time-length">00:00</span>
                 </div>
 
                 <div style="height: 20px; display: flex; align-items: center;">
@@ -82,14 +83,10 @@
                         <i class="fa-solid fa-xmark"></i>
                     </span>
                     <ul class="player__controls-playlist-list">
-                        <li class="player__controls-playlist-item">
+                        <!-- <li class="player__controls-playlist-item">
                             <h2 class="player__controls-playlist-item-name">Day la tieu de bai hat</h2>
                             <span class="player__controls-playlist-item-author">Day la author</span>
-                        </li>
-                        <li class="player__controls-playlist-item">
-                            <h2 class="player__controls-playlist-item-name">Day la tieu de bai hat</h2>
-                            <span class="player__controls-playlist-item-author">Day la author</span>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

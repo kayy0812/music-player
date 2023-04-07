@@ -1,0 +1,45 @@
+@media screen and (max-width: 768px) {
+    
+    .player {
+        top: 0;
+        overflow-y: auto;
+        bottom: 0;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .player__controls {
+        width: 100%;
+    }
+
+    .player__avatar {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+        width: 100%;
+    }
+
+    .player__avatar-img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .player__controls {
+        width: 100%;
+    }
+
+    .player__avatar {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+        width: 100%;
+    }
+
+    .player__avatar-img {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -10,7 +10,7 @@
     height: 100%;
     filter: hue-rotate(45deg) blur(8px) contrast(120%) saturate(80%);
     transform: scale(1.1);
-    object-fit: fill;
+    object-fit: cover;
     z-index: 1;
 }
 
@@ -176,7 +176,7 @@
     margin-top: 6px;
     border-radius: 3px;
     transition: all ease .1s;
-    padding: 4px 0;
+    padding: 1px 0;
     box-sizing: content-box;
 }
 
@@ -191,7 +191,7 @@
 }
 
 .player__controls-progress:hover {
-    height: 14px;
+    height: 12px;
 }
 
 .player__controls-action {
